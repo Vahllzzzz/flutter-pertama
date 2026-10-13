@@ -11,7 +11,9 @@ import 'package:flutter/material.dart';
 // import 'stack-expanded-sizedbox/LatihanEmpat.dart';
 // import 'Listview/Listview.dart';
 // import 'Listview/Grid.dart';
-import 'Listview/list-screen.dart';
+// import 'Listview/list-screen.dart';
+// import 'navigator.dart';
+import 'routes/app_routes.dart';
 
 void main () {
   runApp(MyApp());
@@ -24,16 +26,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text("Flutter Widget"),
-          backgroundColor: Colors.blueAccent,
-          centerTitle: true,
-        ),
-        body: ArticleListScreen()
-      )
-    );
+      initialRoute: '/',
+      routes: AppRoutes.routes(),
+      );
   }
 }
 
