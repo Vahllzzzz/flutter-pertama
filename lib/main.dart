@@ -13,10 +13,12 @@ import 'package:flutter/material.dart';
 // import 'Listview/Grid.dart';
 // import 'Listview/list-screen.dart';
 // import 'navigator.dart';
+
+// Pastikan import ini mengarah ke file app_routes.dart yang baru kita buat
 import 'routes/app_routes.dart';
 
-void main () {
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,14 +27,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'eCommax Electronics',
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      // Tambahkan tema warna biru gelap khas eCommax
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF00155C),
+          foregroundColor: Colors.white,
+          elevation: 0,
+        ),
+        useMaterial3: true,
+      ),
+      // Sesuaikan pemanggilan route dengan class AppRoutes yang baru
+      initialRoute: AppRoutes.home,
       routes: AppRoutes.routes(),
-      );
+    );
   }
 }
 
-class HelloWidget extends StatelessWidget{
+// HelloWidget tetap dibiarkan jika Anda masih ingin menyimpannya untuk referensi
+class HelloWidget extends StatelessWidget {
   const HelloWidget({super.key});
 
   @override
